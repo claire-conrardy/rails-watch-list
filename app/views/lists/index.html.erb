@@ -1,3 +1,24 @@
-<% @lists.each do |list| %>
-  <li><%= list.name %></li>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/jerrick/image/upload/v1572366135/5db867376c8529001dc0a425.jpg);">
+      <div class="container">
+        <h1>Save any kinds of movies</h1>
+        <div class="btn"><%= link_to "Create a movie list", new_list_path %></a></div>
+      </div>
+    </div>
+
+<br>
+<br>
+<div class="container">
+  <h3>My lists</h3>
+
+  <br>
+
+  <div class="index-container">
+    <% @lists.each do |list| %>
+      <a href="<%=list_path(list.id)%>"><div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://media.istockphoto.com/photos/popcorn-and-clapperboard-picture-id1191001701?k=20&m=1191001701&s=612x612&w=0&h=uDszifNzvgeY5QrPwWvocFOUCw8ugViuw-U8LCJ1wu8=)">
+      <li><%= list.name %></li>
+      </div></a>
+    <% end %>
+
+    <div class="btn btn-success"><%= link_to "Create a movie list", new_list_path %></a></div>
+  </div>
+</div>
